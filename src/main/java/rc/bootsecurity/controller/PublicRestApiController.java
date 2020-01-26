@@ -3,7 +3,7 @@ package rc.bootsecurity.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import rc.bootsecurity.db.UserRepository;
+import rc.bootsecurity.model.UserRepository;
 import rc.bootsecurity.model.User;
 
 import java.util.List;
