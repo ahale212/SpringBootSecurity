@@ -13,16 +13,16 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
-    private UserPrincipalDetailsService userPrincipalDetailsService;
+//    private UserPrincipalDetailsService userPrincipalDetailsService;
 
-    public SecurityConfiguration(UserPrincipalDetailsService userPrincipalDetailsService) {
-        this.userPrincipalDetailsService = userPrincipalDetailsService;
-    }
+//    public SecurityConfiguration(UserPrincipalDetailsService userPrincipalDetailsService) {
+//        this.userPrincipalDetailsService = userPrincipalDetailsService;
+//    }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) {
-        auth.authenticationProvider(authenticationProvider());
-    }
+//    @Override
+//    protected void configure(AuthenticationManagerBuilder auth) {
+//        auth.authenticationProvider(authenticationProvider());
+//    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -39,14 +39,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .httpBasic();
     }
 
-    @Bean
-    DaoAuthenticationProvider authenticationProvider(){
-        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
-        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
-        daoAuthenticationProvider.setUserDetailsService(this.userPrincipalDetailsService);
-
-        return daoAuthenticationProvider;
-    }
+//    @Bean
+//    DaoAuthenticationProvider authenticationProvider(){
+//        DaoAuthenticationProvider daoAuthenticationProvider = new DaoAuthenticationProvider();
+//        daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+//        daoAuthenticationProvider.setUserDetailsService(this.userPrincipalDetailsService);
+//
+//        return daoAuthenticationProvider;
+//    }
 
     @Bean
     PasswordEncoder passwordEncoder() {
